@@ -67,6 +67,10 @@ body {
     transition: margin 500ms, width 500ms;
 }
 
+.interface {
+    width: 100%;
+}
+
 .interface header {
     margin: 0 auto;
     width: 32%;
@@ -183,7 +187,7 @@ footer {
 
 /* Tablets */
 @media only screen and (min-width: 640px) and (max-width: 1200px) {
-    .content {
+    #content {
         margin: 64px auto;
         width: 90%;
         transition: margin 500ms, width 500ms;
@@ -201,9 +205,9 @@ footer {
 }
 /* Mobiles */
 @media only screen and (min-width: 200px) and (max-width: 640px) {
-    .content {
+    #content {
         margin: 64px auto;
-        width: 100%;
+        width: 98%;
         transition: margin 500ms, width 500ms;
     }
 
@@ -219,6 +223,7 @@ footer {
         letter-spacing: 1.4px;
         transition: margin 500ms, width 500ms, font-size 500ms, letter-spacing 500ms;
     }
+
     #logo {
         position: absolute;
         top: 32px;
@@ -229,5 +234,12 @@ footer {
         transform: rotate(-90deg);
 
         transition: margin 500ms, transform 500ms;
+    }
+    .shell {
+        text-align: center;
+        padding: 16px 4px 16px;
+    }
+    .shell textarea {
+        width: 100%;
     }
 }
