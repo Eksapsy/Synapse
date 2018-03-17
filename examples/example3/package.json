@@ -1,10 +1,10 @@
 {
   "name": "example1",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server -a localhost -p 8080 -c-1"
   },
   "author": "",
   "license": "ISC",
@@ -16,5 +16,6 @@
   "devDependencies": {
     "webpack": "^2.7.0",
     "worker-loader": "^1.1.0"
-  }
+  },
+  "description": ""
 }

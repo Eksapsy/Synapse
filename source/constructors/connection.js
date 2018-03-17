@@ -51,7 +51,7 @@ class Connection {
         this.bindMethods(this);
       }
     } else {
-      console.log('Neuron failed to make connection because either target, source, or brain was invalid', source, target, brain);
+      console.error('Neuron failed to make connection because either target, source, or brain was invalid', source, target, brain);
       throw '[ANOMALY]';
     }
   }
@@ -65,7 +65,7 @@ class Connection {
         this.lastCharge = charge;
         this.target.transmit(charge);
       } else {
-        console.log('We found a neuron without a target.');
+        console.error('We found a neuron without a target.');
         throw '[ANOMALY]';
       }
   }
