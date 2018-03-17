@@ -1,0 +1,239 @@
+div, html, body, canvas {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: 'IBM Plex Sans Condensed', Courier, sans-serif;
+    color: aliceblue;
+    overflow-y: scroll;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1f1c3a+0,274e75+100 */
+    background: #1f1c3a; /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #3498db 0%, #3eadf7 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #3498db 0%,#3eadf7 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #3498db 0%,#3eadf7 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3498db', endColorstr='#3eadf7',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: rgb(0, 0, 0, 0); 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #101010; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #040404; 
+}
+
+#logo {
+    position: absolute;
+    top: 4px;
+    margin-left: 12px;
+    text-align: left;
+
+    font-size: 120%;
+    transform: rotate(-30deg);
+    transition: margin 500ms, transform 500ms;
+}
+#logo h2{
+    margin-top: -32px;
+    font-size: 80%;
+    color: rgb(203, 220, 233);
+    text-align: right;
+}
+
+#content {
+    margin: 64px auto;
+    width: 64%;
+    padding-bottom: 100px;
+    transition: margin 500ms, width 500ms;
+}
+
+.interface {
+    width: 100%;
+}
+
+.interface header {
+    margin: 0 auto;
+    width: 32%;
+    text-align: center;
+    color: aliceblue;
+}
+
+.interface header h1 {
+    border-bottom: 4px solid #f1f1f1;
+    border-radius: 2px;
+    text-shadow: 1px 1px 12px #182029;
+}
+
+.menu {
+    /* display: -webkit-inline-box; */
+    width: 28%;
+    margin: 32px auto;
+    margin-bottom: 64px;
+    text-align: center;
+
+    /* border: 2px solid aliceblue; */
+    border-bottom-right-radius: 32px;
+    border-top-left-radius: 128px;
+    padding: 16px;
+    box-shadow: 2px 2px 12px 0px #182029;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1f1c3a+0,274e75+100 */
+    background: #2c3e50; /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #1f2935 0%, #314255 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #1f2935 0%,#314255 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #1f2935 0%,#314255 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1f2935', endColorstr='#24313f',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+    transition: width 500ms;
+}
+
+.menu section h1 {
+    margin-top: 12px;
+    margin-bottom: 4px;
+    margin-right: 8px;
+    text-align: right;
+    font-size: 128%;
+    text-transform: uppercase;
+}
+
+.menu section a {
+    display: inline-block;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    font-size: 100%;
+    letter-spacing: 1.4px;
+    font-family: 'Open Sans', sans-serif;
+    color: rgba(240, 248, 255, 0.5);
+    text-decoration: none;
+}
+
+.menu section a:hover {
+    color: rgb(240, 248, 255);
+    transition: color 128ms;
+}
+
+.menu section p {
+    margin: 0;
+
+    color: rgb(209, 219, 228);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 90%;
+    letter-spacing: 1.5px;
+    transform: rotate(-2deg)
+}
+
+.shell {
+    text-align: center;
+    margin: 0px 32px 0px;
+    padding: 16px 16px 16px;
+}
+
+.shell textarea {
+    display: inline-block;
+    /* border: 8px solid #101010; */
+    box-shadow: 2px 2px 32px 0px #182029;
+    max-height: 80%;
+    min-height: 32px;
+    max-width: 80%;
+    min-width: 20%;
+    width: 80%;
+    margin: 0 auto;
+    padding: 4px;
+    text-align: left;
+    color: aliceblue;
+    background: #182029;
+}
+
+footer {
+    position: fixed;
+    height: 64px;
+    width: 100%;
+    bottom: 0;
+    padding: 1rem;
+    border-top: 2px solid aliceblue;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1f1c3a+0,274e75+100 */
+    background: #2c3e50; /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #182029 0%, #24313f 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #182029 0%,#24313f 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #182029 0%,#24313f 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#182029', endColorstr='#24313f',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+/* Tablets */
+@media only screen and (min-width: 640px) and (max-width: 1200px) {
+    #content {
+        margin: 64px auto;
+        width: 90%;
+        transition: margin 500ms, width 500ms;
+    }
+    .menu {
+        width: 42%;
+        transition: width 500ms;
+    }
+    .menu section a {
+        transition: margin 500ms, width 500ms, font-size 500ms, letter-spacing 500ms;
+    }
+    #logo {
+        transition: margin 500ms, transform 500ms;
+    }
+}
+/* Mobiles */
+@media only screen and (min-width: 200px) and (max-width: 640px) {
+    #content {
+        margin: 64px auto;
+        width: 98%;
+        transition: margin 500ms, width 500ms;
+    }
+
+    .menu {
+        width: 100%;
+        transition: width 500ms;
+    }
+
+    .menu section a {
+        margin: 2px auto;
+        width: 100%;
+        font-size: 110%;
+        letter-spacing: 1.4px;
+        transition: margin 500ms, width 500ms, font-size 500ms, letter-spacing 500ms;
+    }
+
+    #logo {
+        position: absolute;
+        top: 32px;
+        margin-left: -20px;
+        text-align: left;
+    
+        font-size: 120%;
+        transform: rotate(-90deg);
+
+        transition: margin 500ms, transform 500ms;
+    }
+    .shell {
+        text-align: center;
+        padding: 16px 4px 16px;
+    }
+    .shell textarea {
+        width: 100%;
+    }
+}

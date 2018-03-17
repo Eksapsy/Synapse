@@ -1,0 +1,19 @@
+{
+  "name": "Synapse",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server"
+  },
+  "repository": "https://github.com/viziionary/Synapse",
+  "author": "Eksapsy <michael.tolis@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "global": "^4.3.2",
+    "webpack": "^4.1.1",
+    "webpack-dev-server": "^3.1.1"
+  },
+  "devDependencies": {
+    "webpack-cli": "^2.0.12"
+  }
+}
