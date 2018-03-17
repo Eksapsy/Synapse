@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server --watch"
   },
   "repository": "https://github.com/viziionary/Synapse",
   "author": "Eksapsy <michael.tolis@gmail.com>",

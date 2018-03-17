@@ -35,12 +35,12 @@ body {
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #101010; 
+    background: #202020; 
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #040404; 
+    background: #101010; 
 }
 
 #logo {
