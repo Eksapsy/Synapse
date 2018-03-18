@@ -1,6 +1,6 @@
 // this file needs cleanup / separation into sub functions
 
-import Synapse from '../../source/constructors/synapse.js';
+import Synapse from '../../source/constructors/network.js';
 import Engine from '../resources/engine.js';
 import Viewer from '../resources/viewer.js';
 window.addEventListener("load", function() {
