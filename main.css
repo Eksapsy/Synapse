@@ -15,12 +15,7 @@ body {
     font-family: 'IBM Plex Sans Condensed', Courier, sans-serif;
     color: aliceblue;
     overflow-y: scroll;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1f1c3a+0,274e75+100 */
-    background: #1f1c3a; /* Old browsers */
-    background: -moz-linear-gradient(-45deg, #3498db 0%, #3eadf7 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(-45deg, #3498db 0%,#3eadf7 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(135deg, #3498db 0%,#3eadf7 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3498db', endColorstr='#3eadf7',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    
 }
 
 /* width */
@@ -48,6 +43,7 @@ body {
     top: 4px;
     margin-left: 12px;
     text-align: left;
+    z-index: 999999;
 
     font-size: 120%;
     transform: rotate(-30deg);
@@ -61,11 +57,44 @@ body {
 }
 
 #content {
-    margin: 64px auto;
+    margin: 0 auto;
     width: 64%;
     padding-bottom: 100px;
+    overflow: auto;
+    position: relative;
+
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1f1c3a+0,274e75+100 */
+    background: #1f1c3a; /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #2880bbe0 0%, #3eadf7 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #2880bbe0 0%,#3eadf7 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #2880bbe0 0%,#3eadf7 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2880bb', endColorstr='#3eadf7',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+    box-shadow: 0px 0px 32px #101010;
+
     transition: margin 500ms, width 500ms;
 }
+
+#content:before {
+    content: "";
+    position: fixed;
+    top: -5px;
+    right: 0;
+    z-index: -1;
+    
+  
+    display: block;
+    background-image: url('images/background4.jpg');
+    background-size:cover;
+    width: 105%;
+    height: 100%;
+  
+    -webkit-filter: blur(3px);
+    -moz-filter: blur(3px);
+    -o-filter: blur(3px);
+    -ms-filter: blur(3px);
+    filter: blur(3px);
+  }
 
 .interface {
     width: 100%;
@@ -82,6 +111,12 @@ body {
     border-bottom: 4px solid #f1f1f1;
     border-radius: 2px;
     text-shadow: 1px 1px 12px #182029;
+}
+
+.interface p {
+    text-align: center;
+    font-size: 110%;
+    letter-spacing: 1px;
 }
 
 .menu {
