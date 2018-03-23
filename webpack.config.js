@@ -1,8 +1,17 @@
 module.exports = {
-    entry: "./source/workers/sim.js",
+    entry: "./index.js",
     output: {
-        path: __dirname + '/source/workers/packed',
-        filename: "sim.js"
+        path: __dirname + '/',
+        filename: "bundle.js"
     },
+    module: {
+        rules: [
+            {
+                test: /\.js$/,
+                exclude: /node_modules/
+            }
+        ]
+    },
+
     watch: true
 };

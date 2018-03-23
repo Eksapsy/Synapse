@@ -5559,7 +5559,7 @@ Lockfile:
 
 Trace: 
   Error: Command failed.
-  Exit signal: SIGTERM
+  Exit code: 1
   Command: sh
   Arguments: -c webpack-dev-server --watch
   Directory: /home/eksapsy/Desktop/JavaScript/NodeJS/Synapse
