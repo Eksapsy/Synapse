@@ -21,10 +21,10 @@ window.addEventListener("load", function() {
 			var input = inputs[i].input;
 			var output = brain.input(input);
 			console.log('Input', input);
-			console.log('Output', output);
+			console.log('Output', Math.round(output[0]));
 			diff = Math.abs(inputs[i].output[0] - output[0]);
 			score -= diff;
-			console.log('Output value is ' + output[0] + ' which is a distance of ' + diff + ' from desired output of ' + inputs[i].output[0]);
+			//console.log('Output value is ' + output[0] + ' which is a distance of ' + diff + ' from desired output of ' + inputs[i].output[0]);
 		}
 		console.log('Score', score);
 		console.log('---');
