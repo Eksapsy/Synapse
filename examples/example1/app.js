@@ -28,6 +28,10 @@ window.addEventListener("load", function() {
 		}
 		console.log('Score', score);
 		console.log('---');
-		return score;
+		if (score < 0) {
+			return score;
+		} else {
+			return true;
+		}
 	});
 });

@@ -39,8 +39,7 @@ var mutations = {
       //console.log('Biasing connections.');
       var connection = getRandomProperty(brain.globalReferenceConnections);
       if (connection) {
-        connection.bias += getRandomDecimal(0, 1);
-        if (connection.bias > 1) connection.bias = 1;
+        connection.bias = getRandomDecimal(0, 1);
       }
     }
   },
@@ -51,8 +50,7 @@ var mutations = {
       //console.log('Unbiasing connections.');
       var connection = getRandomProperty(brain.globalReferenceConnections);
       if (connection) {
-        connection.bias -= getRandomDecimal(0, 1);
-        if (connection.bias < 0) connection.bias = 0;
+        connection.bias = getRandomDecimal(0, 1);
       }
     }
   },
@@ -78,7 +76,8 @@ var mutations = {
           neuron.delete();
       }
     }
-  },
+  }
+  /*
   fillMemory: { //add memory capacity
     frequencyMod: 0,
     frequency: 1,
@@ -100,7 +99,6 @@ var mutations = {
       }
     }
   },
-  /*
   polarize: {
     frequencyMod: 0,
     frequency: 1,

@@ -32,7 +32,7 @@ class Network {
         return true;
       } else {
         if (this.brain.score < this.child.score) {
-          console.log('Evolved from ' + this.brain.score + ' to ' + this.child.score + '. Synapse top score is ' + this.brain.score);
+          alert('!!! Evolved from ' + this.brain.score + ' to ' + this.child.score + '. Synapse top score is ' + this.brain.score);
           this.brain = cloneBrain(this.child);
         }
         console.log('Child score of: ' + this.child.score + ' was not enough to outperform brain score of ' + this.brain.score);

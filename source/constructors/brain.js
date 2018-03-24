@@ -3,6 +3,7 @@ import mutate from '../functions/mutate.js';
 import getRandomNumber from '../functions/getrandomnumber.js';
 import getRandomLowNumber from '../functions/getrandomlownumber.js';
 import createStructure from '../functions/createstructure.js';
+import cloneBrain from '../functions/clonebrain.js';
 class Brain {
   constructor(inputSize, outputSize) {
     this.bindMethods(this);
@@ -37,6 +38,7 @@ class Brain {
         create(brain, type, count, max);
       }
     }
+    this.fresh = cloneBrain(this);
   }
   bindMethods(self) {
     self.deleteNeuron = this.deleteNeuron.bind(self);
@@ -60,6 +62,9 @@ class Brain {
     return Object.values(this.layers.output).map(neuron => {
       return neuron.measure();
     });
+    for (prop in this) {
+      this[prop] = this.fresh[prop];
+    }
   }
   deleteConnection(connectionId) {
     if (this.globalReferenceConnections.hasOwnProperty(connectionId)) {
@@ -95,7 +100,8 @@ class Brain {
   generate() {
     this.activations = 0;
     this.mutationRate = getRandomLowNumber(1, 100, 0.75);
-    mutate(this.mutationRate, this);
+    mutate(this.mutationRate, this.fresh);
+    this.fresh = cloneBrain(this);
   }
 }
 export default Brain;
