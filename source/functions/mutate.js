@@ -1,7 +1,7 @@
 import mutations from './mutations.js';
 import getRandomNumber from './getrandomnumber.js';
 import getRandomProperty from './getrandomproperty.js';
-import cloneBrain from './clonebrain.js';
+import cloneBrain from './clonebrain-1.0.0.js';
 var mutationList = [];
 Object.keys(mutations).map((key) => {
 	for (let i = 0; i < mutations[key].frequency; i++) {

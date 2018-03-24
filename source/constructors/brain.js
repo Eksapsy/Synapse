@@ -3,7 +3,7 @@ import mutate from '../functions/mutate.js';
 import getRandomNumber from '../functions/getrandomnumber.js';
 import getRandomLowNumber from '../functions/getrandomlownumber.js';
 import createStructure from '../functions/createstructure.js';
-import cloneBrain from '../functions/clonebrain.js';
+import cloneBrain from '../functions/clonebrain-1.0.0.js';
 class Brain {
   constructor(inputSize, outputSize) {
     this.bindMethods(this);

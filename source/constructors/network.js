@@ -1,5 +1,5 @@
 import Brain from './brain.js';
-import cloneBrain from '../functions/clonebrain.js';
+import cloneBrain from '../functions/clonebrain-1.0.0.js';
 class Network {
   constructor(inputSize, outputSize, getScore) {
     this.topScore = false;
