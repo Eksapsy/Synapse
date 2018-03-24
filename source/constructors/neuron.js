@@ -70,10 +70,10 @@ class Neuron {
     //}
     //var output = (((total / this.recentCharges.length) * this.inverse) + this.bias ) / 2;
 
-    var output = (((charge * this.inverse) + this.bias) + 0.5) / 3; 
+    var output = (((charge * this.inverse) + this.bias) + 0.5) / 3;
     if (output > 1) output = 1;
     if (output < 0) output = 0;
-    console.log('Recieved charge ', charge, ' with bias of ', this.bias, ' transmitting:', output);
+    console.log('Received charge ', charge, ' with bias of ', this.bias, ' transmitting:', output);
 
     //this.recentCharges.push(charge);
     //if (this.recentCharges.length > this.memory) {

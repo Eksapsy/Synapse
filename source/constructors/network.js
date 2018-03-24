@@ -6,6 +6,7 @@ class Network {
     this.inputSize = inputSize;
     this.outputSize = outputSize;
     this.getScore = getScore;
+    this.iterations = 0;
     this.brain = new Brain(inputSize, outputSize);
     this.child;
     this.ancestors;
@@ -16,6 +17,7 @@ class Network {
     self.run = this.run.bind(self);
   }
   run() {
+    this.iterations++;
     if (!this.brain.score) {
       this.brain.score = this.getScore(this.brain);
       console.log('Brain born with score of ' + this.brain.score);

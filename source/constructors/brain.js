@@ -72,14 +72,14 @@ class Brain {
           delete source.connections[connectionId];
         }
       } else {
-        console.log('!!! [ANOMALY] Connection was deleted but had no source.');
+        console.error('!!! [ANOMALY] Connection was deleted but had no source.');
       }
       if (target) {
         if (target.connected[connectionId]) {
           delete target.connected[connectionId];
         }
       } else {
-        console.log('!!! [ANOMALY] Connection was deleted but had no target.');
+        console.error('!!! [ANOMALY] Connection was deleted but had no target.');
       }
       delete this.globalReferenceConnections[connectionId];
     }
