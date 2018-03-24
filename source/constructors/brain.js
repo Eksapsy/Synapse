@@ -22,7 +22,7 @@ class Brain {
     for (let i1 = 0; i1 < outputSize; i1++) {
       new Neuron(this, 'output');
     }
-    for (let i1 = 0; i1 < getRandomLowNumber(Math.round((inputSize + outputSize) / 4), Math.round((inputSize + outputSize) / 2)); i1++) {
+    for (let i1 = 0; i1 < getRandomLowNumber(1, Math.round((inputSize + outputSize) / 2)); i1++) {
       new Neuron(this, 'hidden');
     }
     for (let i1 = 0; i1 < inputSize; i1++) {
@@ -95,7 +95,7 @@ class Brain {
   }
   generate() {
     this.activations = 0;
-    this.mutationRate = getRandomLowNumber(1, 100, 0.75);
+    this.mutationRate = getRandomLowNumber(1, 200, 0.75);
     mutate(this.mutationRate, this);
   }
 }

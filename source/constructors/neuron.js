@@ -3,6 +3,8 @@ import isNumber from '../functions/isnumber.js';
 import getRandomNumber from '../functions/getrandomnumber.js';
 import getRandomLowNumber from '../functions/getrandomlownumber.js';
 import getRandomDecimal from '../functions/getrandomdecimal.js';
+
+var diversity = [];
 class Neuron {
   constructor(brain, type) {
     this.type = type;
@@ -24,6 +26,7 @@ class Neuron {
     this.polarization = getRandomDecimal(0, 1);
     this.threshold = 1; // getRandomDecimal(5, 10); 
     this.chargeRate = getRandomDecimal(0, 1);
+    this.gain = getRandomDecimal(0, 0.1);
     this.inverse = getRandomNumber(0, 1);
     if (this.inverse === 0) this.inverse = -1;
     this.bias = getRandomDecimal(0, 1);
@@ -54,12 +57,12 @@ class Neuron {
     this.brain.deleteNeuron(this.id);
   }
   measure() {
-    var output = (((this.recentCharge * this.inverse) + this.bias) + 0.5) / 3; 
+    var output = (((this.recentCharge * this.inverse) + this.bias) / 2) + this.gain;
+    if (output > 1) output = 1;
+    if (output < 0) output = 0;
     return output;
   }
   transmit(charge) {
-
-    this.recentCharge = charge;
 
     // this is if the neuron has memory, but I'm thinking most neurons probably should not exhibit much memory if any - unclear on this and it should be tested as we improve the model
     // for now testing with no memory.
@@ -70,10 +73,17 @@ class Neuron {
     //}
     //var output = (((total / this.recentCharges.length) * this.inverse) + this.bias ) / 2;
 
-    var output = (((charge * this.inverse) + this.bias) + 0.5) / 3; 
+    var output = (((charge * this.inverse) + this.bias) / 2) + this.gain; 
     if (output > 1) output = 1;
     if (output < 0) output = 0;
-    console.log('Recieved charge ', charge, ' with bias of ', this.bias, ' transmitting:', output);
+    this.recentCharge = output;
+    diversity.push(output);
+    var total = 0;
+    for (let i = 0; i < diversity.length; i++){
+      total += diversity[i];
+    }
+    var average = total / diversity.length;
+    console.log('Recieved charge ', charge.toFixed(2), ' with bias of ', this.bias.toFixed(2), ' transmitting:', output.toFixed(2), ' making the average neural output ', average.toFixed(2));
 
     //this.recentCharges.push(charge);
     //if (this.recentCharges.length > this.memory) {
