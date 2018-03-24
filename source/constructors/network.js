@@ -23,7 +23,7 @@ class Network {
     } else {
       this.child = cloneBrain(this.brain);
       this.child.generate();
-      var childScore = this.getScore(this.child);
+      var childScore = this.getScore(cloneBrain(this.child));
       this.child.score = childScore;
       console.log('Child scored: ' + this.child.score);
       if (childScore === true) {
@@ -32,7 +32,7 @@ class Network {
         return true;
       } else {
         if (this.brain.score < this.child.score) {
-          alert('!!! Evolved from ' + this.brain.score + ' to ' + this.child.score + '. Synapse top score is ' + this.brain.score);
+          alert('!!! Evolved from ' + this.brain.score + ' to ' + this.child.score + '.');
           this.brain = cloneBrain(this.child);
         }
         console.log('Child score of: ' + this.child.score + ' was not enough to outperform brain score of ' + this.brain.score);

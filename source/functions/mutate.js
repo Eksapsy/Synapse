@@ -10,8 +10,8 @@ Object.keys(mutations).map((key) => {
 });
 
 function mutate(max, child) {
-	var copy = cloneBrain(child);
-	console.log('Mutating child:', copy);
+	//var copy = cloneBrain(child);
+	//console.log('Mutating child:', copy);
 	for (let i = 0; i < max; i++) {
 		if (mutationList.length > 0) {
 			var rand = getRandomNumber(0, mutationList.length - 1);
@@ -20,7 +20,7 @@ function mutate(max, child) {
 			mutations[mutation].mutate(child);
 		}
 	}
-	console.log('Mutation result:', cloneBrain(child));
+	//console.log('Mutation result:', cloneBrain(child));
 }
 
 export default mutate;

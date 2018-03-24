@@ -38,7 +38,6 @@ class Brain {
         create(brain, type, count, max);
       }
     }
-    this.fresh = cloneBrain(this);
   }
   bindMethods(self) {
     self.deleteNeuron = this.deleteNeuron.bind(self);
@@ -62,9 +61,6 @@ class Brain {
     return Object.values(this.layers.output).map(neuron => {
       return neuron.measure();
     });
-    for (prop in this) {
-      this[prop] = this.fresh[prop];
-    }
   }
   deleteConnection(connectionId) {
     if (this.globalReferenceConnections.hasOwnProperty(connectionId)) {
@@ -100,8 +96,7 @@ class Brain {
   generate() {
     this.activations = 0;
     this.mutationRate = getRandomLowNumber(1, 100, 0.75);
-    mutate(this.mutationRate, this.fresh);
-    this.fresh = cloneBrain(this);
+    mutate(this.mutationRate, this);
   }
 }
 export default Brain;
